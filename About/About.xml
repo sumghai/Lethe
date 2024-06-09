@@ -6,7 +6,7 @@
 	<description>Adds spacer and ultratech building, fixtures, furniture, apparel, weapons and items inspired by sci-fi films such as &lt;i&gt;Oblivion&lt;/i&gt;.\n\nv0.0 (Alpha)</description>
 	<url/>
 	<supportedVersions>
-		<li>1.3</li>
+		<li>1.5</li>
 	</supportedVersions>
 	<modDependencies>
 		<li>
@@ -21,7 +21,14 @@
 		<li>Ludeon.RimWorld</li>
 		<li>Ludeon.RimWorld.Royalty</li>
 		<li>Ludeon.RimWorld.Ideology</li>
+		<li>Ludeon.RimWorld.Biotech</li>
+		<li>Ludeon.RimWorld.Anomaly</li>
 		<li>erdelf.HumanoidAlienRaces</li>
 		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
 	</loadAfter>
+	<loadBefore>
+		<li>sumghai.MousekinRace</li>
+		<li>sumghai.Medpod</li>
+		<li>sumghai.Replimat</li>
+	</loadBefore>
 </ModMetaData>
