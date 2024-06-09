@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Replimat</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+
+				<!-- Move Replimat research project to Lethe tech tree -->
+
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ResearchProjectDef[defName="MolecularNutrientResequencing"]</xpath>
+					<value>
+						<tab>Lethe_TechTree</tab>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ResearchProjectDef[defName="MolecularNutrientResequencing"]/techLevel</xpath>
+					<value>
+						<techLevel>Ultra</techLevel>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ResearchProjectDef[defName="MolecularNutrientResequencing"]/baseCost</xpath>
+					<value>
+						<baseCost>25000</baseCost>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ResearchProjectDef[defName="MolecularNutrientResequencing"]/prerequisites</xpath>
+					<value>
+						<prerequisites>
+							<li>Lethe_Tier3_Fabber</li>
+						</prerequisites>
+					</value>
+				</li>
+				
+				<!-- todo change research bench and facilities -->
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ResearchProjectDef[defName="MolecularNutrientResequencing"]/researchViewX</xpath>
+					<value>
+						<researchViewX>9.00</researchViewX>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ResearchProjectDef[defName="MolecularNutrientResequencing"]/researchViewY</xpath>
+					<value>
+						<researchViewY>3.20</researchViewY>
+					</value>
+				</li>
+
+			</operations>
+		</match>
+	</Operation>
+</Patch>
