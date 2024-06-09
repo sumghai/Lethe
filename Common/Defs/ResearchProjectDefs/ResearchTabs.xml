@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ResearchTabDef>
+		<defName>Lethe_TechTree</defName>
+		<label>Lethe</label>
+		<generalTitle>Lethe research projects</generalTitle>
+		<generalDescription>Decode data encrypted within ancient isolinear devices, and unlock spacer and ultratech technology at increasingly advanced research facilities. You can only have one active project at a time.</generalDescription>
+	</ResearchTabDef>
+	
+</Defs>
