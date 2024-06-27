@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!--=============== Isolinear components ====================-->
+
+	<ThingDef Name="Lethe_IsolinearCompBase" ParentName="ResourceBase" Abstract="True">
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+		</statBases>
+		<stackLimit>1</stackLimit>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<soundInteract>Standard_Drop</soundInteract>
+		<soundDrop>Standard_Drop</soundDrop>
+		<intricate>true</intricate>
+		<thingCategories>
+			<li>Manufactured</li>
+		</thingCategories>
+		<drawGUIOverlay>false</drawGUIOverlay>
+	</ThingDef>
+	
+	<!-- Isolinear artifacts (spawned in special events and quests) -->
+	
+	<ThingDef ParentName="Lethe_IsolinearCompBase">
+		<defName>Lethe_Artifact_IsolinearDatachip</defName>
+		<label>Isolinear Datachip</label>
+		<description>A mysterious ancient optical data storage device marked with an unfamiliar emblem. Build a Jury-Rigged Datachip Reader and complete the Mandelbrot Cipher I research project to unlock its secrets.</description>
+		<graphicData>
+			<texPath>Things/Items/Manufactured/Lethe_Artifact_IsolinearDatachip</texPath>
+		</graphicData>
+		<statBases>
+			<MarketValue>500</MarketValue>
+			<Mass>0.02</Mass>
+		</statBases>
+	</ThingDef>
+	
+	<ThingDef ParentName="Lethe_IsolinearCompBase">
+		<defName>Lethe_Artifact_IsolinearBackup</defName>
+		<label>Isolinear Backup Module</label>
+		<description>A mysterious ancient optical data storage device encased in a rugged housing and marked with an unfamiliar emblem, which has somehow survived millennia entombed in a collapsed ancient bunker. Build a Jury-Rigged Isolinear Computer and complete the Mandelbrot Cipher II and II research projects to decode its contents.</description>
+		<graphicData>
+			<texPath>Things/Items/Manufactured/Lethe_Artifact_IsolinearBackup</texPath>
+		</graphicData>
+		<statBases>
+			<MarketValue>20000</MarketValue>
+			<MaxHitPoints>500</MaxHitPoints>
+			<Mass>6.0</Mass>
+		</statBases>
+	</ThingDef>
+	
+	<!-- Craftable Isolinear components -->
+	
+	<ThingDef ParentName="Lethe_IsolinearCompBase">
+		<defName>Lethe_IsolinearAssembly</defName>
+		<label>Isolinear Computing Assembly</label>
+		<description>An array of high-density optical data storage and computational modules mounted in a rack. Used to construct Isolinear Mainframes and other facilities requiring the highest level of data processing capability.</description>
+		<graphicData>
+			<texPath>Things/Items/Manufactured/Lethe_IsolinearAssembly</texPath>
+		</graphicData>
+		<statBases>
+			<MarketValue>15000</MarketValue>
+			<Mass>3.5</Mass>
+		</statBases>
+	</ThingDef>
+	
+	<ThingDef ParentName="Lethe_IsolinearCompBase">
+		<defName>Lethe_IsolinearModule</defName>
+		<label>Isolinear Computing Module</label>
+		<description>A high-density optical data storage and processing module. Used to construct facilities requiring rapid, localized data storage and retrieval.</description>
+		<graphicData>
+			<texPath>Things/Items/Manufactured/Lethe_IsolinearModule</texPath>
+		</graphicData>
+		<stackLimit>10</stackLimit>
+		<statBases>
+			<MarketValue>6000</MarketValue>
+			<Mass>0.5</Mass>
+		</statBases>
+		<drawGUIOverlay>true</drawGUIOverlay>
+	</ThingDef>
+	
+	<ThingDef ParentName="Lethe_IsolinearCompBase">
+		<defName>Lethe_IsolinearProcessor</defName>
+		<label>Isolinear Processor</label>
+		<description>A high-density optical computational module. Used to construct facilities requiring advanced data extrapolation and processing capabilities.</description>
+		<graphicData>
+			<texPath>Things/Items/Manufactured/Lethe_IsolinearProcessor</texPath>
+		</graphicData>
+		<stackLimit>25</stackLimit>
+		<statBases>
+			<MarketValue>2000</MarketValue>
+			<Mass>0.125</Mass>
+		</statBases>
+		<drawGUIOverlay>true</drawGUIOverlay>
+	</ThingDef>
+
+</Defs>
