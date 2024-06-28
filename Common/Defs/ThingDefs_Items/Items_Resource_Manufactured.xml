@@ -78,6 +78,9 @@
 			<Mass>0.5</Mass>
 		</statBases>
 		<drawGUIOverlay>true</drawGUIOverlay>
+		<tradeTags>
+			<li>Lethe_IsolinearModule</li>
+		</tradeTags>
 	</ThingDef>
 	
 	<ThingDef ParentName="Lethe_IsolinearCompBase">
@@ -93,6 +96,9 @@
 			<Mass>0.125</Mass>
 		</statBases>
 		<drawGUIOverlay>true</drawGUIOverlay>
+		<tradeTags>
+			<li>Lethe_IsolinearProcessor</li>
+		</tradeTags>
 	</ThingDef>
 
 </Defs>

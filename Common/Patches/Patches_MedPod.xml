@@ -56,6 +56,21 @@
 					</value>
 				</li>
 
+				<!-- Replace MedPod's Isolinear Processor with its Lethe counterpart for the costlist of all MedPods and VetPods -->
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[costList[IsolinearProcessor]]/costList/IsolinearProcessor</xpath>
+					<value>
+						<Lethe_IsolinearProcessor>1</Lethe_IsolinearProcessor>
+					</value>
+				</li>
+				
+				<!-- Remove the now-unneeded MedPod-specific Isolinear Processor -->
+				
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="IsolinearProcessor"]</xpath>
+				</li>
+
 			</operations>
 		</match>
 	</Operation>

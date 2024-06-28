@@ -56,6 +56,21 @@
 					</value>
 				</li>
 
+				<!-- Replace Replimat's Isolinear Computing Module with its Lethe counterpart for the costlist of the Replimat Computer (and any building that may need Iso Computing Modules) and any trader inventory stock generators -->
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[costList[IsolinearModule]]/costList/IsolinearModule</xpath>
+					<value>
+						<Lethe_IsolinearModule>1</Lethe_IsolinearModule>
+					</value>
+				</li>
+				
+				<!-- Remove the now-unneeded Replimat-specific Iso Computing Module -->
+				
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="IsolinearModule"]</xpath>
+				</li>
+
 			</operations>
 		</match>
 	</Operation>
