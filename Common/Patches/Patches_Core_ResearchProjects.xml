@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+		
+			<!-- Set the delay for spawning the Lethe Isolinear datachip artifact when the Advanced Fabrication research project is completed -->
+			
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ResearchProjectDef[defName="AdvancedFabrication"]/researchMods</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>Defs/ResearchProjectDef[defName="AdvancedFabrication"]</xpath>
+					<value>
+						<researchMods/>
+					</value>
+				</nomatch>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ResearchProjectDef[defName="AdvancedFabrication"]/researchMods</xpath>
+				<value>
+					<li Class="Lethe.ResearchMod_SetDelayForIsoDataChipSpawn" />
+				</value>
+			</li>
+		
+		</operations>
+	</Operation>
+</Patch>

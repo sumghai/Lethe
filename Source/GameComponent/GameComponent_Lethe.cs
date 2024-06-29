@@ -14,18 +14,37 @@ namespace Lethe
 
         public bool shouldSpawnIsoDataChip = true;
 
+        public static GameComponent_Lethe Instance;
+
+        public GameComponent_Lethe()
+        {
+            Instance = this;
+        }
+
         public GameComponent_Lethe(Game game)
-        { 
+        {
+            Instance = this;
+        }
+
+        public void PreInit()
+        {
+            Instance = this;
+        }
+
+        public override void StartedNewGame()
+        {
+            base.StartedNewGame();
+            PreInit();
+        }
+
+        public override void LoadedGame()
+        {
+            base.LoadedGame();
+            PreInit();
         }
 
         public override void GameComponentTick()
         {
-            if (shouldSpawnIsoDataChip && Find.TickManager.TicksGame % GenTicks.TickLongInterval == 0 && LetheDefOf.AdvancedFabrication.IsFinished) 
-            {
-                spawnIsoDataChipTick = Find.TickManager.TicksGame + spawnIsoDataChipDelayTicks;
-                shouldSpawnIsoDataChip = false;
-            }
-
             if (spawnIsoDataChipTick > 0 && Find.TickManager.TicksGame > spawnIsoDataChipTick) 
             {
                 SpawnIsoDataChipNearResearchBench();
