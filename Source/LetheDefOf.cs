@@ -10,5 +10,6 @@ namespace Lethe
         public static ResearchProjectDef Lethe_Cipher1;
 
         public static ThingDef Lethe_Artifact_IsolinearDatachip;
+        public static ThingDef Lethe_JuryRiggedDatachipReader;
     }
 }

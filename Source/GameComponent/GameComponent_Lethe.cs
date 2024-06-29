@@ -39,8 +39,7 @@ namespace Lethe
             IntVec3 spawnPos = spawnMap.listerBuildings.AllBuildingsColonistOfClass<Building_ResearchBench>().First().Position;
             Thing isoDataChip = ThingMaker.MakeThing(LetheDefOf.Lethe_Artifact_IsolinearDatachip);
             GenPlace.TryPlaceThing(isoDataChip, spawnPos, spawnMap, ThingPlaceMode.Near);
-            Find.LetterStack.ReceiveLetter("Lethe_Letter_IsoDataChip".Translate(), "Lethe_Letter_IsoDataChipDesc".Translate("Jury-Rigged Datachip Reader".Colorize(ColoredText.NameColor), LetheDefOf.Lethe_Cipher1.LabelCap.Colorize(ColoredText.NameColor)), LetterDefOf.NeutralEvent, isoDataChip);
-            // todo - replace hardcoded name for Jury-Rigged Datachip Reader with label of actual building
+            Find.LetterStack.ReceiveLetter("Lethe_Letter_IsoDataChip".Translate(), "Lethe_Letter_IsoDataChipDesc".Translate(LetheDefOf.Lethe_JuryRiggedDatachipReader.LabelCap.Colorize(ColoredText.NameColor), LetheDefOf.Lethe_Cipher1.LabelCap.Colorize(ColoredText.NameColor)), LetterDefOf.NeutralEvent, isoDataChip);
         }
 
         public override void ExposeData()

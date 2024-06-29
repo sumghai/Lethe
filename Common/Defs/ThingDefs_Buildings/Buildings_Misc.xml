@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- ========================= Jury-Rigged Research Buildings (for unlocking early Lethe research) ==========================-->
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>Lethe_JuryRiggedDatachipReader</defName>
+		<label>Jury-rigged datachip reader</label>
+		<description>An optical datachip reader improvised from contemporary electronic components. Required for the Mandelbrot Cipher I research project, and should be placed near a hi-tech research bench.</description>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<tickerType>Normal</tickerType>
+		<graphicData>
+			<texPath>Things/Building/Misc/MultiAnalyzer</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>2.46875</drawSize>
+		</graphicData>
+		<uiIconPath>Things/Building/Misc/Lethe_JuryRiggedDatachipReader_MenuIcon</uiIconPath>
+		<uiIconScale>1.05</uiIconScale>
+		<castEdgeShadows>true</castEdgeShadows>
+		<thingCategories>
+			<li>BuildingsMisc</li>
+		</thingCategories>
+		<costList>
+			<Steel>40</Steel>
+			<Plasteel>50</Plasteel>
+			<Gold>10</Gold>
+			<ComponentIndustrial>4</ComponentIndustrial>
+			<ComponentSpacer>4</ComponentSpacer>
+			<Lethe_Artifact_IsolinearDatachip>1</Lethe_Artifact_IsolinearDatachip>
+		</costList>
+		<altitudeLayer>Building</altitudeLayer>
+		<rotatable>false</rotatable>
+		<fillPercent>0.5</fillPercent>
+		<statBases>
+			<MaxHitPoints>200</MaxHitPoints>
+			<WorkToBuild>10000</WorkToBuild>
+			<Mass>60</Mass>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<size>(2,2)</size>
+		<designationCategory>Misc</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<canOverlapZones>false</canOverlapZones>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+		</building>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<shortCircuitInRain>true</shortCircuitInRain>
+				<basePowerConsumption>200</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Facility">
+				<maxSimultaneous>1</maxSimultaneous>
+			</li>
+			<li Class="Lethe.CompProperties_BuildingExtraGraphics">
+				<extraGraphicData>
+					<texPath>Things/Building/Misc/Lethe_JuryRiggedDatachipReader</texPath>
+					<graphicClass>Graphic_Single</graphicClass>
+					<drawSize>(1,1)</drawSize>
+					<drawOffset>(0, 1, 0)</drawOffset>
+				</extraGraphicData>
+				<glowGraphicData>
+					<texPath>Things/Building/Misc/FX/Lethe_JuryRiggedDatachipReader_chipGlow</texPath>
+					<graphicClass>Graphic_Single</graphicClass>
+					<shaderType>MoteGlow</shaderType>
+					<drawSize>(1,1)</drawSize>
+					<drawOffset>(0, 1.5, 0)</drawOffset>
+				</glowGraphicData>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+		<researchPrerequisites>
+			<li>AdvancedFabrication</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+	</ThingDef>
+	
+</Defs>

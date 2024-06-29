@@ -23,7 +23,7 @@
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
 		<requiredResearchFacilities>
 			<li>MultiAnalyzer</li>
-			<!--<li>Lethe_JuryRiggedDatachipReader</li>-->
+			<li>Lethe_JuryRiggedDatachipReader</li>
 		</requiredResearchFacilities>
 		<researchViewX>0.00</researchViewX>
 		<researchViewY>0.00</researchViewY>

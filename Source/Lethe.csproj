@@ -58,6 +58,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comps\CompBuildingExtraGraphics.cs" />
+    <Compile Include="Comps\CompProperties_BuildingExtraGraphics.cs" />
     <Compile Include="GameComponent\GameComponent_Lethe.cs" />
     <Compile Include="LetheDefOf.cs" />
     <Compile Include="LetheMod.cs" />
