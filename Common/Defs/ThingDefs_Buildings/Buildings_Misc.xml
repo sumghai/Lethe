@@ -3,10 +3,7 @@
 
 	<!-- ========================= Jury-Rigged Research Buildings (for unlocking early Lethe research) ==========================-->
 
-	<ThingDef ParentName="BuildingBase">
-		<defName>Lethe_JuryRiggedDatachipReader</defName>
-		<label>Jury-rigged datachip reader</label>
-		<description>An optical datachip reader improvised from contemporary electronic components. Required for the Mandelbrot Cipher I research project, and should be placed near a hi-tech research bench.</description>
+	<ThingDef Name="Lethe_JuryRiggedResearchBuildingsBase" ParentName="BuildingBase" Abstract="True">
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<tickerType>Normal</tickerType>
 		<graphicData>
@@ -14,7 +11,6 @@
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>2.46875</drawSize>
 		</graphicData>
-		<uiIconPath>Things/Building/Misc/Lethe_JuryRiggedDatachipReader_MenuIcon</uiIconPath>
 		<uiIconScale>1.05</uiIconScale>
 		<castEdgeShadows>true</castEdgeShadows>
 		<thingCategories>
@@ -26,7 +22,6 @@
 			<Gold>10</Gold>
 			<ComponentIndustrial>4</ComponentIndustrial>
 			<ComponentSpacer>4</ComponentSpacer>
-			<Lethe_Artifact_IsolinearDatachip>1</Lethe_Artifact_IsolinearDatachip>
 		</costList>
 		<altitudeLayer>Building</altitudeLayer>
 		<rotatable>false</rotatable>
@@ -53,6 +48,22 @@
 				<basePowerConsumption>200</basePowerConsumption>
 			</li>
 			<li Class="CompProperties_Flickable"/>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+	</ThingDef>
+	
+	<ThingDef ParentName="Lethe_JuryRiggedResearchBuildingsBase">
+		<defName>Lethe_JuryRiggedDatachipReader</defName>
+		<label>Jury-rigged datachip reader</label>
+		<description>An optical datachip reader improvised from contemporary electronic components. Required for the Mandelbrot Cipher I research project, and should be placed near a hi-tech research bench.</description>
+		<uiIconPath>Things/Building/Misc/Lethe_JuryRiggedDatachipReader_MenuIcon</uiIconPath>
+		<costList>
+			<Lethe_Artifact_IsolinearDatachip>1</Lethe_Artifact_IsolinearDatachip>
+		</costList>
+		<comps>
 			<li Class="CompProperties_Facility">
 				<maxSimultaneous>1</maxSimultaneous>
 			</li>
@@ -72,13 +83,45 @@
 				</glowGraphicData>
 			</li>
 		</comps>
-		<placeWorkers>
-			<li>PlaceWorker_ShowFacilitiesConnections</li>
-		</placeWorkers>
 		<researchPrerequisites>
 			<li>AdvancedFabrication</li>
 		</researchPrerequisites>
-		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+	</ThingDef>
+	
+	<ThingDef ParentName="Lethe_JuryRiggedResearchBuildingsBase">
+		<defName>Lethe_JuryRiggedIsolinearComputer</defName>
+		<label>Jury-rigged Isolinear computer</label>
+		<description>A crude Isolinear computer improvised from contemporary electronic components, used to access data from a recovered ancient Isolinear Backup Module. Significantly increases research speed when placed near a hi-tech research bench, and unlocks advanced spacer research projects.</description>
+		<uiIconPath>Things/Building/Misc/Lethe_JuryRiggedIsolinearComputer_MenuIcon</uiIconPath>
+		<costList>
+			<Lethe_Artifact_IsolinearBackup>1</Lethe_Artifact_IsolinearBackup>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Facility">
+				<statOffsets>
+					<ResearchSpeedFactor>2.0</ResearchSpeedFactor>
+				</statOffsets>
+				<maxSimultaneous>1</maxSimultaneous>
+			</li>
+			<li Class="Lethe.CompProperties_BuildingExtraGraphics">
+				<extraGraphicData>
+					<texPath>Things/Building/Misc/Lethe_JuryRiggedIsolinearComputer</texPath>
+					<graphicClass>Graphic_Single</graphicClass>
+					<drawSize>(2,2)</drawSize>
+					<drawOffset>(0, 1, 0)</drawOffset>
+				</extraGraphicData>
+				<glowGraphicData>
+					<texPath>Things/Building/Misc/FX/Lethe_JuryRiggedIsolinearComputer_screenGlow</texPath>
+					<graphicClass>Graphic_Single</graphicClass>
+					<shaderType>MoteGlow</shaderType>
+					<drawSize>(2,2)</drawSize>
+					<drawOffset>(0, 1.5, 0)</drawOffset>
+				</glowGraphicData>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>Lethe_Cipher1</li>
+		</researchPrerequisites>
 	</ThingDef>
 	
 </Defs>
