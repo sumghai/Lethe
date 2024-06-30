@@ -27,8 +27,9 @@
 		</requiredResearchFacilities>
 		<researchViewX>0.00</researchViewX>
 		<researchViewY>0.00</researchViewY>
+		<!-- todo - working letter title, subject to change -->
 		<discoveredLetterTitle>Secrets of the Ancients</discoveredLetterTitle>
-		<discoveredLetterText>As it turned out, the decrypted Isolinear Datachip contained only a single message and a set of coordinates:\n\n&lt;i&gt;UCF PROC 3417.48 - Continuity of Government Procedures\n\nIn the event of loss of continuity of government, as confirmed through termination of regular broadcasts on Colonial Frequencies 104 and 302, all Federation citizens and local officials are to proceed to [coordinates] and await further instructions.\n\nAuthorization Code SENIOR INDIGO&lt;/i&gt;\n\nGiven the nature of the message and the importance placed on the secrecy of these coordinates, the described location is highly likely to be a bunker, shelter or some other site of strategic importance to this ancient "Federation", and might contain valuable resources or technologies.</discoveredLetterText>
+		<discoveredLetterText>As it turned out, the decrypted Isolinear Datachip contained only a single message and a set of coordinates:\n\n&lt;i&gt;(*Gray)UCF PROC 3417.48 - Continuity of Government Procedures\n\nIn the event of loss of continuity of government, as confirmed through termination of regular broadcasts on Colonial Frequencies 104 and 302, all Federation citizens and local officials are to proceed to [coordinates] and await further instructions.\n\nAuthorization Code SENIOR INDIGO(/Gray)&lt;/i&gt;\n\nGiven the nature of the message and the importance placed on the secrecy of these coordinates, the described location is highly likely to be a bunker, shelter or some other site of strategic importance to this ancient "Federation", and might contain valuable resources or technologies.</discoveredLetterText>
 		<researchMods>
 			<li Class="Lethe.ResearchMod_TriggerAncientBunkerQuest" />
 		</researchMods>
