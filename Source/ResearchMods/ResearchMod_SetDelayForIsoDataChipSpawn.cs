@@ -2,12 +2,14 @@
 
 namespace Lethe
 {
-    internal class ResearchMod_SetDelayForIsoDataChipSpawn : ResearchMod
+    public class ResearchMod_SetDelayForIsoDataChipSpawn : ResearchMod
     {
         public override void Apply()
         {
-            GameComponent_Lethe.Instance.spawnIsoDataChipTick = Find.TickManager.TicksGame + GameComponent_Lethe.spawnIsoDataChipDelayTicks;
-            GameComponent_Lethe.Instance.shouldSpawnIsoDataChip = false;
+            if (!GameComponent_Lethe.Instance.spawnedIsoDataChip && GameComponent_Lethe.Instance.spawnIsoDataChipTick < 0)
+            {
+                GameComponent_Lethe.Instance.spawnIsoDataChipTick = Find.TickManager.TicksGame + GameComponent_Lethe.spawnIsoDataChipDelayTicks;
+            }
         }
     }
 }

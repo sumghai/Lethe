@@ -12,7 +12,7 @@ namespace Lethe
         
         public int spawnIsoDataChipTick = -99999;
 
-        public bool shouldSpawnIsoDataChip = true;
+        public bool spawnedIsoDataChip = false;
 
         public static GameComponent_Lethe Instance;
 
@@ -35,6 +35,7 @@ namespace Lethe
         {
             base.StartedNewGame();
             PreInit();
+            spawnedIsoDataChip = false; // Reset the initial Iso Datachip spawning flag for new games
         }
 
         public override void LoadedGame()
@@ -54,17 +55,27 @@ namespace Lethe
 
         public void SpawnIsoDataChipNearResearchBench()
         {
-            Map spawnMap = Find.Maps.Where(m => m.IsPlayerHome).FirstOrDefault();
-            IntVec3 spawnPos = spawnMap.listerBuildings.AllBuildingsColonistOfClass<Building_ResearchBench>().First().Position;
-            Thing isoDataChip = ThingMaker.MakeThing(LetheDefOf.Lethe_Artifact_IsolinearDatachip);
-            GenPlace.TryPlaceThing(isoDataChip, spawnPos, spawnMap, ThingPlaceMode.Near);
-            Find.LetterStack.ReceiveLetter("Lethe_Letter_IsoDataChip".Translate(), "Lethe_Letter_IsoDataChipDesc".Translate(LetheDefOf.Lethe_JuryRiggedDatachipReader.LabelCap.Colorize(ColoredText.NameColor), LetheDefOf.Lethe_Cipher1.LabelCap.Colorize(ColoredText.NameColor)), LetterDefOf.NeutralEvent, isoDataChip);
+            if (!spawnedIsoDataChip)
+            {
+                // Spawn the Isolinear Datachip on the first research bench in the first player colony map
+                Map spawnMap = Find.Maps.Where(m => m.IsPlayerHome).FirstOrDefault();
+                IntVec3 spawnPos = spawnMap.listerBuildings.AllBuildingsColonistOfClass<Building_ResearchBench>().First().Position;
+                Thing isoDataChip = ThingMaker.MakeThing(LetheDefOf.Lethe_Artifact_IsolinearDatachip);
+                GenPlace.TryPlaceThing(isoDataChip, spawnPos, spawnMap, ThingPlaceMode.Near);
+
+                // Notify the player with a letter
+                Find.LetterStack.ReceiveLetter("Lethe_Letter_IsoDataChip".Translate(), "Lethe_Letter_IsoDataChipDesc".Translate(LetheDefOf.Lethe_JuryRiggedDatachipReader.LabelCap.Colorize(ColoredText.NameColor), LetheDefOf.Lethe_Cipher1.LabelCap.Colorize(ColoredText.NameColor)), LetterDefOf.NeutralEvent, isoDataChip);
+
+                // Don't spawn the datachip again in the future for the current savegame
+                spawnedIsoDataChip = true;
+            }
         }
 
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look(ref shouldSpawnIsoDataChip, "shouldSpawnIsoDataChip", defaultValue: false);
+
+            Scribe_Values.Look(ref spawnedIsoDataChip, "spawnedIsoDataChip", false, true);
             Scribe_Values.Look(ref spawnIsoDataChipTick, "spawnIsoDataChipTick", 0, true);
         }
     }
