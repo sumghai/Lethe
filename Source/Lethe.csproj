@@ -67,6 +67,7 @@
     <Compile Include="Patches\Harmony_BackCompatibility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResearchMods\ResearchMod_SetDelayForIsoDataChipSpawn.cs" />
+    <Compile Include="ResearchMods\ResearchMod_TriggerAncientBunkerQuest.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

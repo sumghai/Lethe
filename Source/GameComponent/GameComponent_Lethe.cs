@@ -14,6 +14,8 @@ namespace Lethe
 
         public bool spawnedIsoDataChip = false;
 
+        public bool triggeredAncientBunkerQuest = false;
+
         public static GameComponent_Lethe Instance;
 
         public GameComponent_Lethe()
@@ -35,7 +37,9 @@ namespace Lethe
         {
             base.StartedNewGame();
             PreInit();
-            spawnedIsoDataChip = false; // Reset the initial Iso Datachip spawning flag for new games
+            // Reset the initial intro research and quest flags for new games
+            spawnedIsoDataChip = false; 
+            triggeredAncientBunkerQuest = false;
         }
 
         public override void LoadedGame()
@@ -77,6 +81,7 @@ namespace Lethe
 
             Scribe_Values.Look(ref spawnedIsoDataChip, "spawnedIsoDataChip", false, true);
             Scribe_Values.Look(ref spawnIsoDataChipTick, "spawnIsoDataChipTick", 0, true);
+            Scribe_Values.Look(ref triggeredAncientBunkerQuest, "triggeredAncientBunkerQuest", false, true);
         }
     }
 }
