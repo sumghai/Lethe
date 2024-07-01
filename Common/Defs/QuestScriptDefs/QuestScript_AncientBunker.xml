@@ -3,6 +3,7 @@
 
 	<QuestScriptDef>
 		<defName>Lethe_QuestScript_AncientBunker</defName>
+		<rootSelectionWeight>0</rootSelectionWeight>
 		<autoAccept>true</autoAccept>
 		<isRootSpecial>true</isRootSpecial>
 		<questNameRules>
@@ -18,10 +19,6 @@
 		</questDescriptionRules>
 		<root Class="QuestNode_Sequence">
 			<nodes>
-			
-				<li Class="QuestNode_QuestUnique">
-					<tag>Lethe_UniqueQuest_AncientBunker</tag>
-				</li>
 				
 				<!-- todo - state that rewards are unknown? -->
 				
