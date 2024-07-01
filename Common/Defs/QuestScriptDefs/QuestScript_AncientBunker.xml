@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<QuestScriptDef>
+		<defName>Lethe_QuestScript_AncientBunker</defName>
+		<autoAccept>true</autoAccept>
+		<isRootSpecial>true</isRootSpecial>
+		<questNameRules>
+			<rulesStrings>
+				<li>questName->Ancient bunker</li>
+			</rulesStrings>
+		</questNameRules>
+		<questDescriptionRules>
+			<rulesStrings>
+				<!-- todo - say something about how there may be unknown (or no) threats -->
+				<li>questDescription->The coordinates given in the message encoded on the (*Name)Isolinear datachip(/Name) suggests the existence of some kind of ancient bunker, shelter or some other site of strategic importance to an ancient precursor civilization who called themselves the "Federation".\n\nSend a well-armed team of colonists to investigate and retrieve any resources or technology.</li>
+			</rulesStrings>
+		</questDescriptionRules>
+		<root Class="QuestNode_Sequence">
+			<nodes>
+			
+				<li Class="QuestNode_QuestUnique">
+					<tag>Lethe_UniqueQuest_AncientBunker</tag>
+				</li>
+				
+				<!-- todo - state that rewards are unknown? -->
+				
+				<!-- 
+					todo - generate world object and map for an Ancient Bunker 
+					
+					specifications
+					- location: closest mountainous tile to player colony, no caves (caves make it harder to place a bunker)
+					- map: bunker partially hidden inside a mountain, built from indestructable walls (plot armor), accessed by a custom bunker door
+					- inside the bunker: the unique artifact item, salvageable ancient ruined tech, rubble from cave-in
+				-->
+				
+				<li Class="QuestNode_Set">
+					<name>siteDistRange</name>
+					<value>20~25</value>
+				</li>
+				
+				<li Class="QuestNode_GetSiteTile">
+					<storeAs>tile</storeAs>
+				</li>
+
+				<li Class="QuestNode_GenerateWorldObject">
+					<def>Lethe_WorldObject_AncientBunkerBackupModule</def>
+					<storeAs>ancientBunkerBackupModule</storeAs>
+				</li>
+				
+				<li Class="QuestNode_SpawnWorldObjects">
+					<worldObjects>$ancientBunkerBackupModule</worldObjects>
+					<tile>$tile</tile>
+				</li>
+				
+				
+				
+				
+				
+
+				<li Class="QuestNode_ViolentQuestsAllowed">
+					<node Class="QuestNode_Set">
+						<name>siteThreatChance</name>
+						<value>0.75</value>
+					</node>
+					<elseNode Class="QuestNode_Set">
+						<name>siteThreatChance</name>
+						<value>0</value>
+					</elseNode>
+				</li>
+				
+				<!-- todo - random (small raider group, small mechanoid group, manhunting animals) or no threat -->
+				
+				<!-- Ending -->
+        
+				<!-- todo - prevent World object from being destroyed until quest completed? -->
+
+				<!-- todo - bunker opened, unique artifact retrieved -->
+				<!--<li Class="QuestNode_End">
+					<inSignal>escapeShip.LaunchedShip</inSignal> 
+					<outcome>Success</outcome>
+				</li>-->
+
+			</nodes>
+		</root>
+	</QuestScriptDef>
+
+</Defs>

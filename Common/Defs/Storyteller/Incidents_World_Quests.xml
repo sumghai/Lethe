@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<IncidentDef ParentName="GiveQuestBase">
+		<defName>Lethe_GiveQuest_AncientBunker</defName>
+		<label>ancient bunker</label>
+		<letterLabel>ancient bunker</letterLabel>
+		<questScriptDef>Lethe_QuestScript_AncientBunker</questScriptDef>
+		<baseChance>0</baseChance> <!-- given by a special ResearchMod triggered upon completing the Mandelbrot Cipher I project -->
+	</IncidentDef>
+	
+</Defs>

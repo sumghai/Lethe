@@ -1,4 +1,5 @@
-﻿using Verse;
+﻿using RimWorld;
+using Verse;
 
 namespace Lethe
 {
@@ -8,8 +9,10 @@ namespace Lethe
         {
             if (!GameComponent_Lethe.Instance.triggeredAncientBunkerQuest)
             {
-                // todo - trigger one-time quest to investigate ancient bunker / facility
-                Log.Error("Lethe :: Should trigger ancient bunker quest now");
+                IncidentDef incidentDef = LetheDefOf.Lethe_GiveQuest_AncientBunker;
+                IncidentParms incidentParms = StorytellerUtility.DefaultParmsNow(incidentDef.category, Find.World);
+                incidentDef.Worker.TryExecute(incidentParms);
+
                 GameComponent_Lethe.Instance.triggeredAncientBunkerQuest = true;
             }
         }

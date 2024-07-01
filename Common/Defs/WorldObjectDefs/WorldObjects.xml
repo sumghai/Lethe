@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<WorldObjectDef>
+		<defName>Lethe_WorldObject_AncientBunkerBackupModule</defName>
+		<label>ancient bunker</label>
+		<description>A hidden bunker built by an advanced precursor civilization, identified by the coordinates encoded in an ancient Isolinear Datachip.</description>
+		<!-- todo - replace with custom worldObjectClass -->
+		<!--<worldObjectClass>Site</worldObjectClass>-->
+		<worldObjectClass>EscapeShip</worldObjectClass>
+		<texture>World/WorldObjects/Sites/GenericSite</texture>
+		<expandingIcon>true</expandingIcon>
+		<expandingIconTexture>World/WorldObjects/Expanding/Lethe_AncientBunker</expandingIconTexture>
+		<expandingIconPriority>50</expandingIconPriority>
+		<!-- todo - replace with custom map generator -->
+		<!--<mapGenerator>Lethe_MapGen_AncientBunkerBackupModule</mapGenerator>-->
+		<mapGenerator>EscapeShip</mapGenerator>
+		<comps>
+			<li Class="WorldObjectCompProperties_FormCaravan" />
+		</comps>
+	</WorldObjectDef>
+
+</Defs>
