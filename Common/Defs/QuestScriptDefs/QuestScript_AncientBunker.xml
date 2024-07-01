@@ -20,23 +20,13 @@
 		<root Class="QuestNode_Sequence">
 			<nodes>
 				
-				<!-- todo - state that rewards are unknown? -->
-				
-				<!-- 
-					todo - generate world object and map for an Ancient Bunker 
-					
-					specifications
-					- location: closest mountainous tile to player colony, no caves (caves make it harder to place a bunker)
-					- map: bunker partially hidden inside a mountain, built from indestructable walls (plot armor), accessed by a custom bunker door
-					- inside the bunker: the unique artifact item, salvageable ancient ruined tech, rubble from cave-in
-				-->
-				
-				<li Class="QuestNode_Set">
-					<name>siteDistRange</name>
-					<value>20~25</value>
+				<!-- Sites further away from the player should have lower threat levels for balance -->
+				<li Class="QuestNode_SubScript">
+					<def>Util_AdjustPointsForDistantFight</def>
 				</li>
 				
-				<li Class="QuestNode_GetSiteTile">
+				<!-- Bunker is located in a mountainous tile with no caves (specified within Lethe.QuestNode_AncientBunker_GetBunkerTile) -->
+				<li Class="Lethe.QuestNode_AncientBunker_GetBunkerTile">
 					<storeAs>tile</storeAs>
 				</li>
 
@@ -50,7 +40,11 @@
 					<tile>$tile</tile>
 				</li>
 				
-				
+				<!-- 
+					todo - generate Ancient Bunker map
+					- partially hidden inside a mountain, built from indestructable walls (plot armor), accessed by a custom bunker door
+					- inside the bunker: the unique artifact item, salvageable ancient ruined tech, rubble from cave-in
+				-->
 				
 				
 				

@@ -66,6 +66,7 @@
     <Compile Include="ModCompatibility.cs" />
     <Compile Include="Patches\Harmony_BackCompatibility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Quests\QuestNode_AncientBunker_GetBunkerTile.cs" />
     <Compile Include="ResearchMods\ResearchMod_SetDelayForIsoDataChipSpawn.cs" />
     <Compile Include="ResearchMods\ResearchMod_TriggerAncientBunkerQuest.cs" />
   </ItemGroup>
