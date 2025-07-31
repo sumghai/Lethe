@@ -1,6 +1,5 @@
 ﻿using RimWorld.Planet;
 using RimWorld.QuestGen;
-using System.Linq;
 using Verse;
 
 namespace Lethe
@@ -16,7 +15,7 @@ namespace Lethe
 
         public override bool TestRunInt(Slate slate)
         {
-            if (!TryFindTile(slate, out int tile))
+            if (!TryFindTile(slate, out PlanetTile tile))
             {
                 return false;
             } 
@@ -33,7 +32,7 @@ namespace Lethe
             }
         }
 
-        public bool TryFindTile(Slate slate, out int tile)
+        public bool TryFindTile(Slate slate, out PlanetTile tile)
         {
             Map map = slate.Get<Map>("map", (Map)null, false) ?? Find.RandomPlayerHomeMap;
 
@@ -44,19 +43,19 @@ namespace Lethe
                 // - No caves
                 // - Must be mountainous
                 // - Must be otherwise suitable for new settlements
-                static bool validator(int x) =>
+                static bool validator(PlanetTile x) =>
                     !Find.WorldObjects.AnyWorldObjectAt(x)
                     && !Find.World.HasCaves(x)
                     && Find.WorldGrid[x].hilliness == Hilliness.Mountainous
                     && TileFinder.IsValidTileForNewSettlement(x, null);
-                if (TileFinder.TryFindPassableTileWithTraversalDistance(root, MinDist, MaxDist, out int tile, validator))
+                if (TileFinder.TryFindPassableTileWithTraversalDistance(root, MinDist, MaxDist, out PlanetTile tile, validator))
                 {
                     return tile;
                 }
                 return -1;
             }
 
-            if (!TileFinder.TryFindRandomPlayerTile(out int arg, true, (int x) => findTile(x) != -1))
+            if (!TileFinder.TryFindRandomPlayerTile(out PlanetTile arg, true, (PlanetTile x) => findTile(x) != -1))
             {
                 tile = -1;
                 return false;
