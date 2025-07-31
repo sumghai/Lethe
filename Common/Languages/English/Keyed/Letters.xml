@@ -1,8 +1,14 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
 	<Lethe_Letter_IsoDataChip>A mysterious datachip</Lethe_Letter_IsoDataChip>
 	
 	<Lethe_Letter_IsoDataChipDesc>While tidying the research bench, one of your colonists stumbled upon a mysterious object that they initially thought was a shard of broken glass.\n\nCloser examination reveals highly intricate and precise circuit-like patterns embedded within the transparent material, and what appears to be interface terminals compatible with contemporary computing systems.\n\nThe colonist who first found it immediately recognized the significance of the find, recalling stories shared by passing traders of an ancient civilization renowned for their advanced optical computing technology. Initial analysis suggests that the artifact may indeed be an optical datachip, possibly holding untold knowledge or advanced research data.\n\nIf you construct a {0} and complete the {1} research project, perhaps you could reveal its contents.</Lethe_Letter_IsoDataChipDesc>
 
+	<Lethe_AncientBunkerFoundLabel>Ancient bunker found</Lethe_AncientBunkerFoundLabel>
+	<Lethe_AncientBunkerFoundPeaceful>Upon finding the ancient bunker, your colonists find it eerily quiet. Dust covers the surfaces, and the faint hum of long-dormant machinery fills the air. It seems this place has been untouched for ages, holding its secrets close.</Lethe_AncientBunkerFoundPeaceful>
+	<Lethe_AncientBunkerFound>Upon finding the ancient bunker, your colonists are filled with a sense of awe and curiosity. What secrets might this place hold?</Lethe_AncientBunkerFound>
+
+	<Lethe_LetterLabelCaravanEnteredMap>Caravan entered ancient bunker</Lethe_LetterLabelCaravanEnteredMap>
+	<Lethe_LetterCaravanEnteredMap>As the caravan steps into the ancient bunker, a chill runs down the spines of the colonists. The air is thick with dust, and the faint glow of forgotten technology illuminates the surroundings.</Lethe_LetterCaravanEnteredMap>
 </LanguageData>

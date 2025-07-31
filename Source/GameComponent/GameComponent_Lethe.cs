@@ -1,4 +1,5 @@
-﻿using RimWorld;
+﻿using LudeonTK;
+using RimWorld;
 using System.Linq;
 using Verse;
 
@@ -82,6 +83,15 @@ namespace Lethe
             Scribe_Values.Look(ref spawnedIsoDataChip, "spawnedIsoDataChip", false, true);
             Scribe_Values.Look(ref spawnIsoDataChipTick, "spawnIsoDataChipTick", 0, true);
             Scribe_Values.Look(ref triggeredAncientBunkerQuest, "triggeredAncientBunkerQuest", false, true);
+        }
+
+        [DebugAction("Lethe", "Spawn Iso Data Chip Immediately", allowedGameStates = AllowedGameStates.Playing)]
+        private static void SpawnIsoDataChipTickImmediately()
+        {
+            if (Instance.spawnIsoDataChipTick != -99999)
+            {
+                Instance.spawnIsoDataChipTick = Find.TickManager.TicksGame;
+            }
         }
     }
 }
