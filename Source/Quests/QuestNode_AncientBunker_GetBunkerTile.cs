@@ -2,6 +2,10 @@
 using RimWorld.QuestGen;
 using Verse;
 
+#if v1_5
+using PlanetTile = int;
+#endif
+
 namespace Lethe
 {
     public class QuestNode_AncientBunker_GetBunkerTile : QuestNode
@@ -26,7 +30,7 @@ namespace Lethe
         public override void RunInt()
         {
             Slate slate = QuestGen.slate;
-            if (!slate.TryGet<int>(storeAs.GetValue(slate), out var _) && TryFindTile(QuestGen.slate, out var tile))
+            if (!slate.TryGet<PlanetTile>(storeAs.GetValue(slate), out PlanetTile _) && TryFindTile(QuestGen.slate, out PlanetTile tile))
             {
                 QuestGen.slate.Set(storeAs.GetValue(slate), tile);
             }

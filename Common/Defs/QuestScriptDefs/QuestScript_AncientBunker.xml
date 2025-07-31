@@ -19,10 +19,24 @@
 		</questDescriptionRules>
 		<root Class="QuestNode_Sequence">
 			<nodes>
-				
-				<!-- Sites further away from the player should have lower threat levels for balance -->
-				<li Class="QuestNode_SubScript">
-					<def>Util_AdjustPointsForDistantFight</def>
+				<li Class="QuestNode_QuestUnique">
+					<tag>Lethe_AncientBunker</tag>
+				</li>
+
+				<!-- Add quest reward info? -->
+				<!-- <li Class="QuestNode_AddPassageOffworldReward">
+					<inSignalChoiceUsed>escapeShip.LaunchedShip</inSignalChoiceUsed>
+				</li> -->
+
+				<li Class="QuestNode_ViolentQuestsAllowed">
+					<node Class="QuestNode_Set">
+						<name>siteThreatChance</name>
+						<value>0.75</value>
+					</node>
+					<elseNode Class="QuestNode_Set">
+						<name>siteThreatChance</name>
+						<value>0</value>
+					</elseNode>
 				</li>
 				
 				<!-- Bunker is located in a mountainous tile with no caves (specified within Lethe.QuestNode_AncientBunker_GetBunkerTile) -->
@@ -45,20 +59,6 @@
 					- partially hidden inside a mountain, built from indestructable walls (plot armor), accessed by a custom bunker door
 					- inside the bunker: the unique artifact item, salvageable ancient ruined tech, rubble from cave-in
 				-->
-				
-				
-				
-
-				<li Class="QuestNode_ViolentQuestsAllowed">
-					<node Class="QuestNode_Set">
-						<name>siteThreatChance</name>
-						<value>0.75</value>
-					</node>
-					<elseNode Class="QuestNode_Set">
-						<name>siteThreatChance</name>
-						<value>0</value>
-					</elseNode>
-				</li>
 				
 				<!-- todo - random (small raider group, small mechanoid group, manhunting animals) or no threat -->
 				
