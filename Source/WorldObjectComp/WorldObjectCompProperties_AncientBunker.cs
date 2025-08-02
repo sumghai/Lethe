@@ -1,26 +1,26 @@
-
 using System.Collections.Generic;
 using RimWorld;
 using RimWorld.Planet;
 
-namespace Lethe;
-
-public class WorldObjectCompProperties_AncientBunker : WorldObjectCompProperties
+namespace Lethe
 {
-    public WorldObjectCompProperties_AncientBunker()
+    public class WorldObjectCompProperties_AncientBunker : WorldObjectCompProperties
     {
-        compClass = typeof(AncientBunkerComp);
-    }
-
-    public override IEnumerable<string> ConfigErrors(WorldObjectDef parentDef)
-    {
-        foreach (string item in base.ConfigErrors(parentDef))
+        public WorldObjectCompProperties_AncientBunker()
         {
-            yield return item;
+            compClass = typeof(AncientBunkerComp);
         }
-        if (!typeof(MapParent).IsAssignableFrom(parentDef.worldObjectClass))
+
+        public override IEnumerable<string> ConfigErrors(WorldObjectDef parentDef)
         {
-            yield return parentDef.defName + " has WorldObjectCompProperties_AncientBunker but it's not MapParent.";
+            foreach (string item in base.ConfigErrors(parentDef))
+            {
+                yield return item;
+            }
+            if (!typeof(MapParent).IsAssignableFrom(parentDef.worldObjectClass))
+            {
+                yield return parentDef.defName + " has WorldObjectCompProperties_AncientBunker but it's not MapParent.";
+            }
         }
     }
 }
