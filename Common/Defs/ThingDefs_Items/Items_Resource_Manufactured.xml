@@ -30,6 +30,9 @@
 		<graphicData>
 			<texPath>Things/Items/Manufactured/Lethe_Artifact_IsolinearDatachip</texPath>
 		</graphicData>
+		<descriptionHyperlinks>
+			<ThingDef>Lethe_JuryRiggedDatachipReader</ThingDef>
+		</descriptionHyperlinks>
 		<statBases>
 			<MarketValue>500</MarketValue>
 			<Mass>0.02</Mass>
@@ -43,6 +46,9 @@
 		<graphicData>
 			<texPath>Things/Items/Manufactured/Lethe_Artifact_IsolinearBackup</texPath>
 		</graphicData>
+		<descriptionHyperlinks>
+			<ThingDef>Lethe_JuryRiggedIsolinearComputer</ThingDef>
+		</descriptionHyperlinks>
 		<statBases>
 			<MarketValue>20000</MarketValue>
 			<MaxHitPoints>500</MaxHitPoints>

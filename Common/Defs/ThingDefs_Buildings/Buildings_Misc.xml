@@ -63,6 +63,9 @@
 		<costList>
 			<Lethe_Artifact_IsolinearDatachip>1</Lethe_Artifact_IsolinearDatachip>
 		</costList>
+		<descriptionHyperlinks>
+			<ThingDef>Lethe_Artifact_IsolinearDatachip</ThingDef>
+		</descriptionHyperlinks>
 		<comps>
 			<li Class="CompProperties_Facility">
 				<maxSimultaneous>1</maxSimultaneous>
@@ -96,6 +99,9 @@
 		<costList>
 			<Lethe_Artifact_IsolinearBackup>1</Lethe_Artifact_IsolinearBackup>
 		</costList>
+		<descriptionHyperlinks>
+			<ThingDef>Lethe_Artifact_IsolinearBackup</ThingDef>
+		</descriptionHyperlinks>
 		<comps>
 			<li Class="CompProperties_Facility">
 				<statOffsets>
