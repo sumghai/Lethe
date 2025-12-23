@@ -3,7 +3,8 @@
 	<name>Lethe</name>
 	<author>sumghai</author>
 	<packageId>sumghai.Lethe</packageId>
-	<description>Adds spacer and ultratech building, fixtures, furniture, apparel, weapons and items inspired by sci-fi films such as &lt;i&gt;Oblivion&lt;/i&gt;.\n\nv0.0 (Alpha)</description>
+	<modVersion IgnoreIfNoMatchingField="True">0.0 (alpha)</modVersion>
+	<description>Adds spacer and ultratech building, fixtures, furniture, apparel, weapons and items inspired by sci-fi films such as &lt;i&gt;Oblivion&lt;/i&gt;.</description>
 	<url/>
 	<supportedVersions>
 		<li>1.6</li>
