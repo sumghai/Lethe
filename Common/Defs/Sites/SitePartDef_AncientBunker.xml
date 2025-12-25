@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<SitePartDef>
+		<defName>Lethe_AncientBunker</defName>
+		<label>ancient bunker</label>
+		<description>A hidden bunker built by an advanced precursor civilization, identified by the coordinates encoded in an ancient Isolinear Datachip.</description>
+		<workerClass>Lethe.SitePartWorker_AncientBunker</workerClass>
+		<siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+		<expandingIconTexture>World/WorldObjects/Expanding/Lethe_AncientBunker</expandingIconTexture>
+		<approachOrderString>Investigate {0}</approachOrderString>
+		<approachingReportString>Investigating {0}.</approachingReportString>
+		<arrivedLetterDef>NeutralEvent</arrivedLetterDef>
+		<considerEnteringAsAttack>false</considerEnteringAsAttack>
+		<tags>
+			<li>Lethe_AncientBunker</li>
+		</tags>
+	</SitePartDef>
+	
+	<GenStepDef>
+		<defName>Lethe_AncientBunker</defName>
+		<linkWithSite>Lethe_AncientBunker</linkWithSite>
+		<order>470</order>
+		<genStep Class="Lethe.GenStep_AncientBunker"/>
+	</GenStepDef>
+	
+</Defs>

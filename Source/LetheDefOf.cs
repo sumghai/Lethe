@@ -13,6 +13,6 @@ namespace Lethe
         public static ThingDef Lethe_Artifact_IsolinearDatachip;
         public static ThingDef Lethe_JuryRiggedDatachipReader;
 
-        public static LayoutDef Lethe_AncientBunker;
+        public static SitePartDef Lethe_AncientBunker;
     }
 }

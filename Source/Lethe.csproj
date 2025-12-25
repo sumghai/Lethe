@@ -37,22 +37,19 @@
     <LangVersion>12</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="CaravanArrivalAction\CaravanArrivalAction_AncientBunker.cs" />
     <Compile Include="Comps\CompBuildingExtraGraphics.cs" />
     <Compile Include="Comps\CompProperties_BuildingExtraGraphics.cs" />
     <Compile Include="GameComponent\GameComponent_Lethe.cs" />
-    <Compile Include="GenStep\GenStep_AncientBunker.cs" />
-    <Compile Include="LayoutWorker\LayoutWorker_AncientBunker.cs" />
+    <Compile Include="GenSteps\GenStep_AncientBunker.cs" />
     <Compile Include="LetheDefOf.cs" />
     <Compile Include="LetheMod.cs" />
     <Compile Include="ModCompatibility.cs" />
     <Compile Include="Patches\Harmony_BackCompatibility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Quests\QuestNode_AncientBunker_GetBunkerTile.cs" />
+    <Compile Include="Quests\QuestNode_Root_AncientBunker.cs" />
     <Compile Include="ResearchMods\ResearchMod_SetDelayForIsoDataChipSpawn.cs" />
     <Compile Include="ResearchMods\ResearchMod_TriggerAncientBunkerQuest.cs" />
-    <Compile Include="WorldObjectComp\AncientBunkerComp.cs" />
-    <Compile Include="WorldObjectComp\WorldObjectCompProperties_AncientBunker.cs" />
+    <Compile Include="Sites\SitePartWorker_AncientBunker.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Publicizer">
@@ -70,8 +67,8 @@
       <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
-	<ItemGroup>
-		<Publicize Include="Assembly-CSharp"/>
-	</ItemGroup>
+  <ItemGroup>
+    <Publicize Include="Assembly-CSharp" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

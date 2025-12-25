@@ -4,8 +4,6 @@
 	<QuestScriptDef>
 		<defName>Lethe_QuestScript_AncientBunker</defName>
 		<rootSelectionWeight>0</rootSelectionWeight>
-		<autoAccept>true</autoAccept>
-		<isRootSpecial>true</isRootSpecial>
 		<questNameRules>
 			<rulesStrings>
 				<li>questName->Ancient bunker</li>
@@ -13,67 +11,10 @@
 		</questNameRules>
 		<questDescriptionRules>
 			<rulesStrings>
-				<!-- todo - say something about how there may be unknown (or no) threats -->
-				<li>questDescription->The coordinates given in the message encoded on the (*Name)Isolinear datachip(/Name) suggests the existence of some kind of ancient bunker, shelter or some other site of strategic importance to an ancient precursor civilization who called themselves the "Federation".\n\nSend a well-armed team of colonists to investigate and retrieve any resources or technology.</li>
+				<li>questDescription->The coordinates in the message encoded on the (*Name)Isolinear datachip(/Name) suggests the existence of some kind of ancient bunker, shelter or some other site of strategic importance to an ancient precursor civilization who called themselves the "Federation".\n\nSend a well-armed team of colonists to investigate and retrieve any resources or technology.</li>
 			</rulesStrings>
 		</questDescriptionRules>
-		<root Class="QuestNode_Sequence">
-			<nodes>
-				<li Class="QuestNode_QuestUnique">
-					<tag>Lethe_AncientBunker</tag>
-				</li>
-
-				<!-- Add quest reward info? -->
-				<!-- <li Class="QuestNode_AddPassageOffworldReward">
-					<inSignalChoiceUsed>escapeShip.LaunchedShip</inSignalChoiceUsed>
-				</li> -->
-
-				<li Class="QuestNode_ViolentQuestsAllowed">
-					<node Class="QuestNode_Set">
-						<name>siteThreatChance</name>
-						<value>0.75</value>
-					</node>
-					<elseNode Class="QuestNode_Set">
-						<name>siteThreatChance</name>
-						<value>0</value>
-					</elseNode>
-				</li>
-				
-				<!-- Bunker is located in a mountainous tile with no caves (specified within Lethe.QuestNode_AncientBunker_GetBunkerTile) -->
-				<li Class="Lethe.QuestNode_AncientBunker_GetBunkerTile">
-					<storeAs>tile</storeAs>
-				</li>
-
-				<li Class="QuestNode_GenerateWorldObject">
-					<def>Lethe_WorldObject_AncientBunkerBackupModule</def>
-					<storeAs>ancientBunkerBackupModule</storeAs>
-				</li>
-				
-				<li Class="QuestNode_SpawnWorldObjects">
-					<worldObjects>$ancientBunkerBackupModule</worldObjects>
-					<tile>$tile</tile>
-				</li>
-				
-				<!-- 
-					todo - generate Ancient Bunker map
-					- partially hidden inside a mountain, built from indestructable walls (plot armor), accessed by a custom bunker door
-					- inside the bunker: the unique artifact item, salvageable ancient ruined tech, rubble from cave-in
-				-->
-				
-				<!-- todo - random (small raider group, small mechanoid group, manhunting animals) or no threat -->
-				
-				<!-- Ending -->
-        
-				<!-- todo - prevent World object from being destroyed until quest completed? -->
-
-				<!-- todo - bunker opened, unique artifact retrieved -->
-				<!--<li Class="QuestNode_End">
-					<inSignal>escapeShip.LaunchedShip</inSignal> 
-					<outcome>Success</outcome>
-				</li>-->
-
-			</nodes>
-		</root>
+		<root Class="Lethe.QuestNode_Root_AncientBunker" />
 	</QuestScriptDef>
 
 </Defs>
